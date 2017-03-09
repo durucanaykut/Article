@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <style>
+</style>
+</head>
+<body>
+<!-- Form yeri -->
+<form action="/" method="POST">{% csrf_token %}
+  <table>{{ form.reporterform }}</table>
+    <hr>
+  <input type="submit" value="Submit">
+</form>
+
+<!-- Verileri görelim -->
+
+<hr>
+    {% for oku in veri %}
+<table border="1">
+        {{ forloop.counter0 }}
+        {{ oku.profession }}
+        {{ oku.first_name }}
+        {{ oku.last_name }}
+        {{ oku.email }}
+</table>
+    {% endfor %}
+
+</body>
+</html>
